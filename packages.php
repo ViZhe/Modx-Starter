@@ -21,6 +21,8 @@ define('MODX_API_MODE', true);
 /* this can be used to disable caching in MODX absolutely */
 $modx_cache_disabled= false;
 
+header("Content-type: text/plain");
+
 /* include custom core config and define core path */
 include(dirname(__FILE__) . '/config.core.php');
 if (!defined('MODX_CORE_PATH')) define('MODX_CORE_PATH', dirname(__FILE__) . '/core/');
@@ -52,7 +54,7 @@ foreach ($listPackagesToInstall as $providerId => $installPackages) {
     //Get Provider
     $provider = $modx->getObject('transport.modTransportProvider', $providerId);
     if (empty($provider)){
-        echo 'Could not find provider'."<br>";
+        echo 'Could not find provider'."\n";
         return;
     }
 
@@ -111,10 +113,10 @@ foreach ($listPackagesToInstall as $providerId => $installPackages) {
 
                         if($success) {
                             $package->install();
-                            echo 'Package '.$foundPackage->name.' installed.'."<br>";
+                            echo 'Package '.$foundPackage->name.' installed.'."\n";
                         }
                         else {
-                            echo 'Could not save package '.$foundPackage->name."<br>";
+                            echo 'Could not save package '.$foundPackage->name."\n";
                         }
 
                         break;
@@ -122,7 +124,7 @@ foreach ($listPackagesToInstall as $providerId => $installPackages) {
                 }
             }
             else {
-                echo 'Package '.$packageName.' not found'."<br>";
+                echo 'Package '.$packageName.' not found'."\n";
             }
         }
     }
