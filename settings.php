@@ -19,6 +19,7 @@ $settings = array(
 	'friendly_alias_translit' => 'russian'
 
 );
+
 foreach ($settings as $k => $v) {
 	$opt = $modx->getObject('modSystemSetting', array('key' => $k));
 	$opt->set('value', $v);
@@ -56,6 +57,7 @@ Host: [[++site_url]]
 Sitemap: [[++site_url]]sitemap.xml'
 	)
 );
+
 foreach ($resources as $attr) {
 	$response = $modx->runProcessor('resource/create', $attr);
 }
