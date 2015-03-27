@@ -10,7 +10,8 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 // Settings
 $settings = array(
-
+	// 'parser_class' => 'pdoParser',
+	// 'parser_class_path' => '{core_path}components/pdotools/model/pdotools/',
 	'richtext_default' => 0,
 
 	//url
