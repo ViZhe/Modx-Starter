@@ -10,6 +10,7 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 // Settings
 $settingsAdd = array(
+	// Включаем pdoParser из pdoTools
 	'parser_class' => array(
 		'namespace' => 'pdotools',
 		'area' => 'pdotools_main',
@@ -36,7 +37,7 @@ $settingsUpdate = array(
 	'friendly_urls' => 1,
 	'use_alias_path' => 1,
 	'friendly_alias_translit' => 'russian',
-	
+
 	// Шлюз
 	'request_method_strict' => 1
 );
@@ -72,15 +73,15 @@ $resources = array(
 		'alias' => 'robots',
 		'content_type' => 3,
 		'content' => 'User-agent: *
-		Disallow: /m/
-		Disallow: /core/
-		Disallow: /connectors/
-		Disallow: /assets/components/
-		Disallow: /index.php
-		Disallow: /search
-		Disallow: *?
-		Host: [[++site_url]]
-		Sitemap: [[++site_url]]sitemap.xml'
+Disallow: /m/
+Disallow: /core/
+Disallow: /connectors/
+Disallow: /assets/components/
+Disallow: /index.php
+Disallow: /search
+Disallow: *?
+Host: [[++site_url]]
+Sitemap: [[++site_url]]sitemap.xml'
 	)
 );
 
