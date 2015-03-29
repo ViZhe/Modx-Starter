@@ -6,7 +6,6 @@ $listPackagesToInstall = array(
         'sdStore',
         'AjaxManager',
         'translit',
-        'SanitizeUpload',
         'FormIt',
         'Ace'
     ),
