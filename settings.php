@@ -65,7 +65,7 @@ foreach ($settingsUpdate as $k => $v) {
 
 /*== Content Type ==*/
 
-$ct = $modx->getObject('modContentType',array('name'=>'HTML'));
+$ct = $modx->getObject('modContentType', array('name' => 'HTML'));
 $ct->set('file_extensions', '');
 $ct->save();
 
