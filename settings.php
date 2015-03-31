@@ -8,7 +8,8 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 
-// Settings
+/*== Settings ==*/
+
 $settingsAdd = array(
 	// Включаем pdoParser из pdoTools
 	'parser_class' => array(
@@ -28,7 +29,13 @@ $settingsAdd = array(
 );
 
 $settingsUpdate = array(
-	//Панель управления
+
+	/* Ace */
+	'ace.show_invisibles' => 1,
+	'ace.word_wrap' => 1,
+	/* /Ace */
+	/* Core */
+	// Панель управления
 	'richtext_default' => 0,
 
 	// Дружественные URL
@@ -40,21 +47,31 @@ $settingsUpdate = array(
 
 	// Шлюз
 	'request_method_strict' => 1
+	/* /Core */
 );
 
 foreach ($settingsAdd as $k => $v) {
-	$opt = $modx->newObject('modSystemSetting');
-	$opt->fromArray($v,'',true,true);
-	$opt->save();
+	$sa = $modx->newObject('modSystemSetting');
+	$sa->fromArray($v,'',true,true);
+	$sa->save();
 }
 
 foreach ($settingsUpdate as $k => $v) {
-	$opt = $modx->getObject('modSystemSetting', array('key' => $k));
-	$opt->set('value', $v);
-	$opt->save();
+	$su = $modx->getObject('modSystemSetting', array('key' => $k));
+	$su->set('value', $v);
+	$su->save();
 }
 
-// Resources
+
+/*== Content Type ==*/
+
+$ct = $modx->getObject('modContentType',array('name'=>'HTML'));
+$ct->set('file_extensions', '');
+$ct->save();
+
+
+/*== Resources ==*/
+
 $resources = array(
 	array(
 		'pagetitle' => 'sitemap',
