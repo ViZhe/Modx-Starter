@@ -33,6 +33,7 @@ $settingsUpdate = array(
 	/* Ace */
 	'ace.show_invisibles' => 1,
 	'ace.word_wrap' => 1,
+	'ace.soft_tabs' => 0,
 	/* /Ace */
 	/* Core */
 	// Панель управления
@@ -81,24 +82,6 @@ $resources = array(
 		'alias' => 'sitemap',
 		'content_type' => 2,
 		'content' =>'[[!pdoSitemap? &checkPermissions=`list`]]'
-	),
-	array(
-		'pagetitle' => 'robots',
-		'template' => 0,
-		'published' => 1,
-		'hidemenu' => 1,
-		'alias' => 'robots',
-		'content_type' => 3,
-		'content' => 'User-agent: *
-Disallow: /m/
-Disallow: /core/
-Disallow: /connectors/
-Disallow: /assets/components/
-Disallow: /index.php
-Disallow: /search
-Disallow: *?
-Host: [[++site_url]]
-Sitemap: [[++site_url]]sitemap.xml'
 	)
 );
 
