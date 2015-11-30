@@ -7,11 +7,10 @@ $listPackagesToInstall = array(
         'AjaxManager',
         'translit',
         'FormIt',
-        'Ace'
     ),
     2 => array( // other providers(SimpleDream)
         'pdoTools',
-
+        'Ace',
     )
 );
 
