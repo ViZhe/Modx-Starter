@@ -3,18 +3,19 @@
 
 ## modx.com
 
-sdStore
-translit
-FormIt
+* sdStore
+* translit
+* FormIt
 
 ## modstore.pro
 
-pdoTools
-Ace
+* pdoTools
+* Ace
 
 
 # Settings
 
+```
 pdotools_fenom_parser: 1
 
 ace.fold_widgets: 0
@@ -37,8 +38,11 @@ friendly_urls_strict: 1
 use_alias_path: 1
 
 request_method_strict: 1
+```
 
 
 # Content Type
 
+```
 HTML: ''
+```
