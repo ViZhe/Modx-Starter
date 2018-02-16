@@ -38,6 +38,8 @@ friendly_urls_strict: 1
 use_alias_path: 1
 
 request_method_strict: 1
+
+enable_gravatar: 0
 ```
 
 
